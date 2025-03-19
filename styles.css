@@ -5,19 +5,19 @@
             box-sizing: border-box;
         }
 
-        /* Dark Theme */
+        /* Light Theme */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #f0f0f0;
+            background-color: #ffffff;
+            color: #333333;
             line-height: 1.6;
             overflow-x: hidden;
             transition: all 0.5s ease;
         }
 
         header, footer {
-            background-color: #1c1c1c;
-            color: white;
+            background-color: #f8f8f8;
+            color: #333333;
             padding: 1rem 0;
             text-align: center;
             letter-spacing: 1px;
@@ -28,7 +28,7 @@
             font-size: 3rem;
             text-transform: uppercase;
             font-weight: bolder;
-            background: linear-gradient(to right, #3498db 20%, #0077ff 50%, #3498db 80%);
+            background: linear-gradient(to right, #6ab9ee 20%, #0077ff 50%, #6ab9ee 80%);
             background-size: 200% 100%;
             background-position: left bottom;
             color: transparent;
@@ -55,9 +55,9 @@
         .about {
             margin-top: 0;
             padding: 40px 0;
-            color: #f0f0f0;
-            opacity: 1; /* Fix: Remove the initial opacity 0 */
-            transform: translateY(0); /* Fix: Remove initial translateY */
+            color: #333333;
+            opacity: 1;
+            transform: translateY(0);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
@@ -77,7 +77,7 @@
         /* Skills Section */
         .skills {
             padding: 50px 0;
-            color: #f0f0f0;
+            color: #333333;
         }
 
         .skills h2 {
@@ -92,16 +92,16 @@
             padding: 20px;
             font-size: 1.2rem;
             border-radius: 10px;
-            background-color: #333;
-            color: #fff;
+            background-color: #f0f0f0;
+            color: #333333;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .skills .skill:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-            background-color: #3498db;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #6ab9ee;
         }
 
         /* Portfolio Section */
@@ -118,20 +118,20 @@
         .portfolio .project {
             display: inline-block;
             width: calc(33% - 2rem);
-            background-color: #333;
-            color: white;
+            background-color: #f0f0f0;
+            color: #333333;
             margin: 1rem;
             padding: 20px;
             border-radius: 8px;
             text-align: left;
             transition: transform 0.5s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            transform: perspective(1000px) rotateX(10deg); /* Tilted forward */
+            transform: perspective(1000px) rotateX(10deg);
         }
 
         .portfolio .project:hover {
-            transform: perspective(1000px) rotateX(0deg); /* Back to 0 degree */
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-            background-color: #3498db;
+            transform: perspective(1000px) rotateX(0deg);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #6ab9ee;
         }
 
         .portfolio .project h3 {
@@ -147,7 +147,7 @@
         /* Testimonials Section */
         .testimonials {
             padding: 50px 15px;
-            background-color: #1e1e1e;
+            background-color: #f8f8f8;
         }
 
         .testimonials h2 {
@@ -158,18 +158,17 @@
         .testimonial {
             margin-bottom: 30px;
             font-size: 1.15rem;
-            color: #b0b0b0;
+            color: #333333;
             text-align: left;
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        .testimonial p {
-            margin-bottom: 1rem;
+        .testimonial.in-view {
+            animation: slideUp 1s ease forwards;
         }
 
-        /* Slide-up Animation for Testimonials */
         @keyframes slideUp {
             0% {
                 opacity: 0;
@@ -181,13 +180,10 @@
             }
         }
 
-        .testimonial.in-view {
-            animation: slideUp 1s ease forwards;
-        }
-
         /* Contact Section */
         .contact {
             padding: 50px 0;
+            background-color: #f0f0f0;
         }
 
         .contact h2 {
@@ -198,7 +194,7 @@
 
         .contact a {
             text-decoration: none;
-            color: #ecf0f1;
+            color: #333333;
             font-size: 1.2rem;
             margin: 0.5rem;
             display: inline-block;
@@ -206,7 +202,7 @@
         }
 
         .contact a:hover {
-            color: #3498db;
+            color: #6ab9ee;
         }
 
         /* Footer */
@@ -217,7 +213,6 @@
         footer p {
             font-weight: 400;
         }
-
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -236,148 +231,143 @@
             }
         }
 
-/* Link Styling */
-a {
-    text-decoration: none;
-    color: #ecf0f1; /* Light gray color */
-    font-size: 1.2rem;
-    position: relative; /* Required for the pseudo-element */
-    transition: color 0.3s ease; /* Smooth color transition */
-}
+        /* Link Styling */
+        a {
+            text-decoration: none;
+            color: #333333;
+            font-size: 1.2rem;
+            font-weight: bold;
+            position: relative;
+            transition: color 0.3s ease;
+        }
 
-/* Hover effect for links */
-a:hover {
-    color: #3498db; /* Change color to blue on hover */
-}
+        a:hover {
+            color: #6ab9ee;
+        }
 
-/* Underline effect */
-a::after {
-    content: ''; /* Create a pseudo-element */
-    position: absolute;
-    bottom: 0; /* Position it at the bottom of the text */
-    left: 0;
-    width: 100%;
-    height: 2px; /* Thickness of the underline */
-    background-color: #3498db; /* Blue color for the underline */
-    transform: scaleX(0); /* Initially, the underline is scaled down */
-    transform-origin: bottom right; /* Start the animation from right to left */
-    transition: transform 0.3s ease; /* Smooth animation */
-}
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #6ab9ee;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
 
-/* On hover, make the underline appear */
-a:hover::after {
-    transform: scaleX(1); /* Scale the underline to full width */
-    transform-origin: bottom left; /* Animation goes left to right */
-}
+        a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
 
-/* Link Styling */
-.special-a {
-    text-decoration: none;
-    color: #ecf0f1; /* Light gray color */
-    font-size: 1.2rem;
-    position: relative; /* Required for the pseudo-element */
-    transition: color 0.3s ease; /* Smooth color transition */
-}
+        /* Special Link Styling */
+        .special-a {
+            text-decoration: none;
+            color: #333333;
+            font-size: 1.2rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
 
-/* Hover effect for links */
-.special-a:hover {
-    color: #003152; /* Change color to blue on hover */
-}
+        .special-a:hover {
+            color: #003152;
+        }
 
-/* Underline effect */
-.special-a::after {
-    content: ''; /* Create a pseudo-element */
-    position: absolute;
-    bottom: 0; /* Position it at the bottom of the text */
-    left: 0;
-    width: 100%;
-    height: 2px; /* Thickness of the underline */
-    background-color: #003152; /* Blue color for the underline */
-    transform: scaleX(0); /* Initially, the underline is scaled down */
-    transform-origin: bottom right; /* Start the animation from right to left */
-    transition: transform 0.3s ease; /* Smooth animation */
-}
+        .special-a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #003152;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
 
-/* On hover, make the underline appear */
-.special-a:hover::after {
-    transform: scaleX(1); /* Scale the underline to full width */
-    transform-origin: bottom left; /* Animation goes left to right */
-}
-/* General Popup Styling */
-.popup {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(0, 0, 0, 0.85); /* Darker background with more opacity */
-    color: white;
-    width: 320px;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    z-index: 1000;
-    font-family: 'Arial', sans-serif; /* Keep the same font */
-    opacity: 0;
-    transform: translateY(100px); /* Initially hidden below */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
-    backdrop-filter: blur(20px); /* Adding blur effect to the background */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow to enhance visibility */
-}
+        .special-a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
 
-/* Show the popup with fade-in and slide-up */
-.popup.show {
-    opacity: 1;
-    transform: translateY(0);
-}
+        /* General Popup Styling */
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #6ab9ee3d;
+            color: #333333;
+            width: 320px;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            z-index: 1000;
+            font-family: 'Arial', sans-serif;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            backdrop-filter: blur(10px);
+        }
 
-/* Close Button */
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.6rem;
-    color: #ecf0f1;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
+        .popup.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.close-btn:hover {
-    color: #3498db;
-}
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.6rem;
+            color: #9ae2ff;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            font-weight: bold;
+        }
 
-/* Title for the Popup */
-#popupTitle {
-    font-size: 1.3rem; /* Smaller font size */
-    margin-bottom: 15px;
-    font-weight: 600;
-    color: #3498db; /* Title color */
-}
+        .close-btn:hover {
+            color: #6ab9ee;
+        }
 
-/* Popup Text */
-.popup p {
-    font-size: 1rem; /* Smaller font size for body text */
-    line-height: 1.6;
-    color: #ccc; /* Slightly lighter text */
-    margin-bottom: 20px;
-    transition: all 0.3s ease;/
-}
+        /* Title for the Popup */
+        #popupTitle {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #6ab9ee;
+        }
 
-    .popup-btn {
-        display: inline-block;
-        padding: 10px 20px;
-        margin-top: 10px;
-        font-size: 16px;
-        color: #fff;
-        background-color: #3498db;
-        border: none;
-        border-radius: 5px;
-        text-decoration: none;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        transition:all 0.3s ease;
-        font-weight: medium;
-    }
+        /* Popup Text */
+        .popup p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333333;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
 
-    .popup-btn:hover {
-        background-color: #535353;
-    }
+        .popup-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #6ab9ee;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: medium;
+        }
+
+        .popup-btn:hover {
+            background-color: #6ab9ee3b;
+        }
+
